@@ -1,7 +1,6 @@
 const startBtn = document.getElementById('start');
 const stopBtn = document.getElementById('stop');
 const resetBtn = document.getElementById('reset');
-
 const showTime = document.getElementById('time');
 
 let timer;
@@ -10,11 +9,13 @@ let elapsedTime = 0;
 let holdTime = 0;
 
 function displayTime() {
+  console.log(showTime)
   timer= setTimeout(function() {
     elapsedTime=Date.now()- startTime+holdTime;
     showTime.textContent = new Date(elapsedTime).toISOString().slice(14, 22);
     displayTime();
   },10);
+  console.log(timer)
 }
 
 //Startボタン押下
